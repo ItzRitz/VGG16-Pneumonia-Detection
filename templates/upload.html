@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload</title>
+	<link rel="stylesheet" href="style.css">
+	<style type="text/css">
+		body{
+  			background: rgba(0,0,0,0.9);
+			}
+		h1 {
+  			color: white;
+  			text-align: center;
+  			font-size: 60px;
+  			font-family: "Lucida Console", "Courier New", monospace;
+			}
+		form{
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  margin-top: -100px;
+		  margin-left: -250px;
+		  width: 500px;
+		  height: 200px;
+		  border: 4px dashed #fff;
+		}
+		form p{
+		  width: 100%;
+		  height: 100%;
+		  text-align: center;
+		  line-height: 170px;
+		  color: #ffffff;
+		  font-family: "Lucida Console", "Courier New", monospace;
+		}
+		form input{
+		  position: absolute;
+		  margin: 0;
+		  padding: 0;
+		  width: 100%;
+		  height: 100%;
+		  outline: none;
+		  opacity: 0;
+		}
+		form button{
+		  margin: 0;
+		  color: #fff;
+		  background: #16a085;
+		  border: none;
+		  width: 508px;
+		  height: 35px;
+		  margin-top: -20px;
+		  margin-left: -4px;
+		  border-radius: 4px;
+		  border-bottom: 4px solid #117A60;
+		  transition: all .2s ease;
+		  outline: none;
+		  font-family: "Lucida Console", "Courier New", monospace;
+		}
+		form button:hover{
+		  background: #149174;
+		  color: #0C5645;
+		}
+		form button:active{
+		  border:0;
+		}
+		p{
+			text-align: center;
+			font-family: "Lucida Console", "Courier New", monospace;
+			color: white;
+			font-size: 110%;
+		}
+		a:link {
+  			color: red;
+		}
+		a:visited {
+  			color: green;
+		}
+		a:active {
+ 			 color: blue;
+		}
+		a:hover{
+			color: white;
+		}
+	</style>
+
+</head>
+<body>
+	<h1>UPLOAD X-RAY IMAGE</h1>
+	<form action="/uploader" method="POST" enctype = "multipart/form-data"> >
+  		<input type="file" name="file">
+  		<p>Drag your file here or click in this area.</p>
+  		<button type="submit">Upload</button>
+	</form>
+	<p>
+		This system aims to predict if a person has <a href="https://en.wikipedia.org/wiki/Pneumonia">PNEUMONIA</a> by analyzing the X-Ray images of the person.
+		The system uses a <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">CNN</a> behind the scenes to make the prediction. The model has been trained on over 4000 images of pneumonia cases. The model is highly efficient at detecting <a href="https://en.wikipedia.org/wiki/False_positives_and_false_negatives#true_positive">TRUE POSITIVES</a>. With our tests it boasted an accuracy of 96.7%.
+		The model also has an very good accuracy of 82% at detecting <a href="https://en.wikipedia.org/wiki/False_positives_and_false_negatives#true_positive">TRUE NEGATIVES</a>.
+		HOWEVER one should not rely on this and should consult a doctor
+	</p>
+</body>
+</html>

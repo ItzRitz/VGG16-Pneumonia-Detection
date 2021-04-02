@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prediction</title>
+	<style type="text/css">
+		body{
+  			background: rgba(0,0,0,0.9);
+			}
+		h1 {
+  			color: white;
+  			text-align: center;
+  			font-size: 60px;
+  			font-family: "Lucida Console", "Courier New", monospace;
+			}
+		img {
+  			border-radius: 10px;
+			}
+		h3 {
+  			color: black;
+  			letter-spacing: 2;
+  			text-align: center;
+  			font-size: 120%;
+  			font-family: "Lucida Console", "Courier New", monospace;
+			}
+		div.pred {
+			border: 8px solid #16a085;
+			border-radius: 20px;
+		    width: 50%;
+		    background-color: #16a085;
+		    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		    margin-bottom: 25px;
+		    margin: auto;
+			}
+		div.container {
+  			text-align: center;
+  			padding: 10px 20px;
+			}
+		p{
+			text-align: center;
+			font-family: "Lucida Console", "Courier New", monospace;
+			color: white;
+			font-size: 110%;
+		}
+		a:link {
+  			color: red;
+		}
+		a:visited {
+  			color: green;
+		}
+		a:active {
+ 			 color: blue;
+		}
+		a:hover{
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<h1>RESULTS</h1>
+	<div class="pred">
+  	<img src="{{ url_for('static', filename=name) }}", alt="X-Ray Image" style="width:100%">
+  	<div class="container">
+  	{% if prediction == 1 %}
+        <h3>BASED ON THE X-RAY IMAGE, THE SYSTEM "<b>CAN PREDICT THE PRESENCE OF PNEUMONIA</b>"<h3>
+    {% else %}
+    	<h3>THE SYSTEM FOUND THE X-RAY TO BE "<b>NORMAL</b>"<h3>
+    {% endif %}
+  	</div>
+	</div>
+	<p>
+		This system aims to predict if a person has <a href="https://en.wikipedia.org/wiki/Pneumonia">PNEUMONIA</a> by analyzing the X-Ray images of the person.
+		The system uses a <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">CNN</a> behind the scenes to make the prediction. The model has been trained on over 4000 images of pneumonia cases. The model is highly efficient at detecting <a href="https://en.wikipedia.org/wiki/False_positives_and_false_negatives#true_positive">TRUE POSITIVES</a>. With our tests it boasted an accuracy of 96.7%.
+		The model also has an very good accuracy of 82% at detecting <a href="https://en.wikipedia.org/wiki/False_positives_and_false_negatives#true_positive">TRUE NEGATIVES</a>.
+		HOWEVER one should not rely on this and should consult a doctor
+	</p>
+</body>
+</html>
